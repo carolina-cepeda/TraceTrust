@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tracetrust.local/schemas/snapshot-manifest.schema.json",
+  "title": "TraceTrust Snapshot Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "snapshot_id",
+    "source_system",
+    "extracted_at",
+    "schema_version",
+    "source_schema",
+    "exporter_version",
+    "anonymization",
+    "files"
+  ],
+  "properties": {
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "source_system": { "type": "string", "minLength": 1 },
+    "extracted_at": { "type": "string", "format": "date-time" },
+    "schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "source_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["database_engine", "migration_ids"],
+      "properties": {
+        "database_engine": { "type": "string", "minLength": 1 },
+        "migration_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "exporter_version": { "type": "string", "minLength": 1 },
+    "anonymization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile",
+        "names_removed",
+        "phones_removed",
+        "actor_ids_pseudonymized",
+        "precise_locations_removed",
+        "media_refs_removed"
+      ],
+      "properties": {
+        "profile": { "type": "string", "minLength": 1 },
+        "names_removed": { "const": true },
+        "phones_removed": { "const": true },
+        "actor_ids_pseudonymized": { "const": true },
+        "precise_locations_removed": { "const": true },
+        "media_refs_removed": { "const": true }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "format", "row_count", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "format": { "enum": ["jsonl", "csv"] },
+          "row_count": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "min_server_seq": { "type": ["integer", "null"], "minimum": 0 },
+          "max_server_seq": { "type": ["integer", "null"], "minimum": 0 }
+        }
+      }
+    }
+  }
+}
