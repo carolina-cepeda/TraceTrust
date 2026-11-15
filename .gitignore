@@ -9,3 +9,6 @@ snapshots/
 __pycache__/
 .pytest_cache/
 .venv/
+
+# Graphify generated graph, reports, visualizations and extraction cache
+graphify-out/

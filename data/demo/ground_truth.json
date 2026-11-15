@@ -1,0 +1,31 @@
+{
+  "seed": 42,
+  "lots": 10,
+  "gold_snapshot_id": "gold-42",
+  "observed_snapshot_id": "observed-42",
+  "expected_record_matches": 20,
+  "perturbations": [
+    {
+      "type": "quantity_discrepancy",
+      "event_id": "evt-receive-00001",
+      "expected_quantity": 613.0,
+      "observed_quantity": 643.0
+    },
+    {
+      "type": "quantity_discrepancy",
+      "event_id": "evt-receive-00004",
+      "expected_quantity": 458.0,
+      "observed_quantity": 428.0
+    },
+    {
+      "type": "quantity_discrepancy",
+      "event_id": "evt-receive-00005",
+      "expected_quantity": 604.0,
+      "observed_quantity": 574.0
+    },
+    {
+      "type": "missing_evidence",
+      "event_id": "evt-receive-00010"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "snapshot_id": "gold-42",
+  "source_system": "synthetic_tracop",
+  "extracted_at": "2026-11-15T18:19:48.229213Z",
+  "schema_version": "1.0.0",
+  "source_schema": {
+    "database_engine": "synthetic",
+    "migration_ids": [
+      "demo-001"
+    ]
+  },
+  "exporter_version": "tracetrust-generator-0.1.0",
+  "anonymization": {
+    "profile": "synthetic-strict",
+    "names_removed": true,
+    "phones_removed": true,
+    "actor_ids_pseudonymized": true,
+    "precise_locations_removed": true,
+    "media_refs_removed": true
+  },
+  "files": [
+    {
+      "path": "events.jsonl",
+      "format": "jsonl",
+      "row_count": 20,
+      "sha256": "d2cfed53747417df3eef34e29801c47205906909301bd378b5685910d9a98e51",
+      "min_server_seq": null,
+      "max_server_seq": null
+    }
+  ]
+}
