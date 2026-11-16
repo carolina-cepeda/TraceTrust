@@ -1,7 +1,7 @@
 {
   "snapshot_id": "gold-42",
   "source_system": "synthetic_tracop",
-  "extracted_at": "2026-11-15T18:19:48.229213Z",
+  "extracted_at": "2026-11-16T19:13:12.828551Z",
   "schema_version": "1.0.0",
   "source_schema": {
     "database_engine": "synthetic",

@@ -1,7 +1,7 @@
 {
   "snapshot_id": "observed-42",
   "source_system": "synthetic_tracop",
-  "extracted_at": "2026-11-15T18:19:48.240726Z",
+  "extracted_at": "2026-11-16T19:13:12.843471Z",
   "schema_version": "1.0.0",
   "source_schema": {
     "database_engine": "synthetic",
@@ -23,7 +23,7 @@
       "path": "events.jsonl",
       "format": "jsonl",
       "row_count": 20,
-      "sha256": "7152d1c416943f273abe304de1d0210a45a3a00ff90a1b1240132527c52a0131",
+      "sha256": "708360801c47a8fba7f5a1f26b9fa9da4363d897da45c3b8984bbf4f440b0d30",
       "min_server_seq": null,
       "max_server_seq": null
     }

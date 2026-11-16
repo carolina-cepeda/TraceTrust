@@ -90,11 +90,11 @@ class AnonymizationPolicy(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     profile: str = Field(min_length=1)
-    names_removed: bool = True
-    phones_removed: bool = True
-    actor_ids_pseudonymized: bool = True
-    precise_locations_removed: bool = True
-    media_refs_removed: bool = True
+    names_removed: bool
+    phones_removed: bool
+    actor_ids_pseudonymized: bool
+    precise_locations_removed: bool
+    media_refs_removed: bool
 
     @field_validator(
         "names_removed",
@@ -138,7 +138,7 @@ class SnapshotManifest(BaseModel):
     source_schema: SourceSchema
     exporter_version: str = Field(min_length=1)
     anonymization: AnonymizationPolicy
-    files: list[SnapshotFile]
+    files: list[SnapshotFile] = Field(min_length=1)
 
 
 class MatchComponent(BaseModel):
@@ -183,3 +183,75 @@ class Finding(BaseModel):
     values: dict[str, Any]
     explanation: str = Field(min_length=1)
     algorithm_version: str = Field(min_length=1)
+
+
+class TrustFactor(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    name: str = Field(min_length=1)
+    weight: float = Field(ge=0, le=1)
+    score: float = Field(ge=0, le=1)
+    contribution: float = Field(ge=0, le=1)
+    explanation: str = Field(min_length=1)
+
+
+class TrustAssessment(BaseModel):
+    """Explainable confidence in the available traceability for an entity."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    assessment_id: str = Field(min_length=1)
+    entity_id: str = Field(min_length=1)
+    snapshot_id: str = Field(min_length=1)
+    score: float = Field(ge=0, le=100)
+    uncapped_score: float = Field(ge=0, le=100)
+    factors: list[TrustFactor] = Field(min_length=1)
+    critical_penalties: list[str] = Field(default_factory=list)
+    explanation: str = Field(min_length=1)
+    algorithm_version: str = Field(min_length=1)
+
+
+class GraphNode(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1)
+    node_type: str = Field(min_length=1)
+    label: str = Field(min_length=1)
+    properties: dict[str, Any] = Field(default_factory=dict)
+
+
+class GraphEdge(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    source: str = Field(min_length=1)
+    target: str = Field(min_length=1)
+    relation: str = Field(min_length=1)
+    properties: dict[str, Any] = Field(default_factory=dict)
+
+
+class TraceGraphArtifact(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    graph_version: str = Field(min_length=1)
+    nodes: list[GraphNode]
+    edges: list[GraphEdge]
+
+
+class AnomalyObservation(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    event_id: str = Field(min_length=1)
+    snapshot_id: str = Field(min_length=1)
+    anomaly_score: float
+    is_anomaly: bool
+    features: dict[str, float]
+    model_version: str = Field(min_length=1)
+
+
+class EvaluationReport(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    dataset_seed: int
+    metrics: dict[str, float]
+    details: dict[str, Any]
+    evaluation_version: str = Field(min_length=1)

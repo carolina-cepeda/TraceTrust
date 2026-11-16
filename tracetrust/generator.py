@@ -87,6 +87,7 @@ def generate_dataset(
     gold_events: list[CanonicalTraceabilityEvent] = []
     observed_events: list[CanonicalTraceabilityEvent] = []
     perturbations: list[dict[str, Any]] = []
+    expected_event_matches: list[dict[str, str]] = []
 
     for index in range(1, lots + 1):
         lot_id, quantity = f"lot-{index:05d}", float(rng.randint(450, 700))
@@ -107,10 +108,14 @@ def generate_dataset(
             input_lots=[lot_id], output_lots=[lot_id], quantity=quantity,
         )
         gold_events.extend([production, receipt])
+        expected_event_matches.extend([
+            {"left_event_id": production.event_id, "right_event_id": production.event_id},
+            {"left_event_id": receipt.event_id, "right_event_id": receipt.event_id},
+        ])
         observed_production = _rebind_snapshot(production, observed_snapshot)
         observed_receipt = _rebind_snapshot(receipt, observed_snapshot)
         if rng.random() < discrepancy_rate:
-            delta = float(rng.choice([-40, -30, 30, 40]))
+            delta = float(rng.choice([-50, -40, 40, 50]))
             observed_quantity = max(0, quantity + delta)
             observed_receipt = observed_receipt.model_copy(update={
                 "quantity": observed_quantity,
@@ -135,7 +140,9 @@ def generate_dataset(
             extracted_at=datetime.now(timezone.utc), schema_version="1.0.0",
             source_schema={"database_engine": "synthetic", "migration_ids": ["demo-001"]},
             exporter_version="tracetrust-generator-0.1.0",
-            anonymization={"profile": "synthetic-strict"},
+            anonymization={"profile": "synthetic-strict", "names_removed": True,
+                           "phones_removed": True, "actor_ids_pseudonymized": True,
+                           "precise_locations_removed": True, "media_refs_removed": True},
             files=[{"path": "events.jsonl", "format": "jsonl",
                     "row_count": len(events), "sha256": _sha256(events_path)}],
         )
@@ -145,6 +152,7 @@ def generate_dataset(
                     "gold_snapshot_id": gold_snapshot,
                     "observed_snapshot_id": observed_snapshot,
                     "expected_record_matches": lots * 2,
+        "expected_event_matches": expected_event_matches,
                     "perturbations": perturbations}
     (root / "ground_truth.json").write_text(json.dumps(ground_truth, indent=2), encoding="utf-8")
     return ground_truth

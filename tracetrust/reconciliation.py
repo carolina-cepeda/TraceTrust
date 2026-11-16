@@ -110,7 +110,7 @@ def score_candidate(candidate: Candidate) -> ReconciliationMatch:
     status = (MatchStatus.MATCH if score >= 0.80 else
               MatchStatus.REVIEW if score >= 0.55 else MatchStatus.NON_MATCH)
     return ReconciliationMatch(
-        match_id=f"match-{left.event_id}-{right.event_id}",
+        match_id=f"match-{left.snapshot_id}-{left.event_id}-{right.snapshot_id}-{right.event_id}",
         left_event_id=left.event_id, right_event_id=right.event_id,
         left_snapshot_id=left.snapshot_id, right_snapshot_id=right.snapshot_id,
         status=status,
@@ -127,12 +127,21 @@ def reconcile(
 ) -> list[ReconciliationMatch]:
     """Return one best auditable decision per left-side event."""
     scored = [score_candidate(candidate) for candidate in select_candidates(left_events, right_events)]
-    best_by_left: dict[str, ReconciliationMatch] = {}
-    for result in scored:
-        current = best_by_left.get(result.left_event_id)
-        if current is None or result.score > current.score:
-            best_by_left[result.left_event_id] = result
-    return [best_by_left[event.event_id] for event in left_events if event.event_id in best_by_left]
+    # A reconciliation is a one-to-one assignment: one source record cannot be
+    # silently matched to multiple records in the other source.
+    selected: list[ReconciliationMatch] = []
+    used_left: set[tuple[str, str]] = set()
+    used_right: set[tuple[str, str]] = set()
+    for result in sorted(scored, key=lambda item: (-item.score, item.match_id)):
+        left_key = (result.left_snapshot_id, result.left_event_id)
+        right_key = (result.right_snapshot_id, result.right_event_id)
+        if left_key in used_left or right_key in used_right:
+            continue
+        selected.append(result)
+        used_left.add(left_key)
+        used_right.add(right_key)
+    order = {(event.snapshot_id, event.event_id): index for index, event in enumerate(left_events)}
+    return sorted(selected, key=lambda item: order[(item.left_snapshot_id, item.left_event_id)])
 
 
 def reconcile_files(left_path: str | Path, right_path: str | Path, output_path: str | Path) -> list[ReconciliationMatch]:

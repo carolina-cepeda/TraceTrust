@@ -1,0 +1,1699 @@
+{
+  "graph_version": "trace-graph-v1",
+  "nodes": [
+    {
+      "id": "event:observed-42:evt-prod-00001",
+      "node_type": "event",
+      "label": "evt-prod-00001",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-01T11:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00001",
+        "snapshot_id": "observed-42",
+        "quantity": 613.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-001",
+      "node_type": "actor",
+      "label": "actor-producer-001",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "organization:observed-42:org-producers-demo",
+      "node_type": "organization",
+      "label": "org-producers-demo",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00001",
+      "node_type": "lot",
+      "label": "lot-00001",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00001",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00001",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00001",
+      "node_type": "event",
+      "label": "evt-receive-00001",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-01T19:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00001",
+        "snapshot_id": "observed-42",
+        "quantity": 643.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-receiver-001",
+      "node_type": "actor",
+      "label": "actor-receiver-001",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "organization:observed-42:org-collection-demo",
+      "node_type": "organization",
+      "label": "org-collection-demo",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00001",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00001",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00002",
+      "node_type": "event",
+      "label": "evt-prod-00002",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-01T14:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00002",
+        "snapshot_id": "observed-42",
+        "quantity": 485.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-002",
+      "node_type": "actor",
+      "label": "actor-producer-002",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00002",
+      "node_type": "lot",
+      "label": "lot-00002",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00002",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00002",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00002",
+      "node_type": "event",
+      "label": "evt-receive-00002",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-01T22:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00002",
+        "snapshot_id": "observed-42",
+        "quantity": 485.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00002",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00002",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00003",
+      "node_type": "event",
+      "label": "evt-prod-00003",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-01T17:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00003",
+        "snapshot_id": "observed-42",
+        "quantity": 678.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-003",
+      "node_type": "actor",
+      "label": "actor-producer-003",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00003",
+      "node_type": "lot",
+      "label": "lot-00003",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00003",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00003",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00003",
+      "node_type": "event",
+      "label": "evt-receive-00003",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T01:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00003",
+        "snapshot_id": "observed-42",
+        "quantity": 678.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00003",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00003",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00004",
+      "node_type": "event",
+      "label": "evt-prod-00004",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-01T20:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00004",
+        "snapshot_id": "observed-42",
+        "quantity": 458.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-004",
+      "node_type": "actor",
+      "label": "actor-producer-004",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00004",
+      "node_type": "lot",
+      "label": "lot-00004",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00004",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00004",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00004",
+      "node_type": "event",
+      "label": "evt-receive-00004",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T04:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00004",
+        "snapshot_id": "observed-42",
+        "quantity": 428.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00004",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00004",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00005",
+      "node_type": "event",
+      "label": "evt-prod-00005",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-01T23:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00005",
+        "snapshot_id": "observed-42",
+        "quantity": 604.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-005",
+      "node_type": "actor",
+      "label": "actor-producer-005",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00005",
+      "node_type": "lot",
+      "label": "lot-00005",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00005",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00005",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00005",
+      "node_type": "event",
+      "label": "evt-receive-00005",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T07:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00005",
+        "snapshot_id": "observed-42",
+        "quantity": 574.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00005",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00005",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00006",
+      "node_type": "event",
+      "label": "evt-prod-00006",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-02T02:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00006",
+        "snapshot_id": "observed-42",
+        "quantity": 629.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-006",
+      "node_type": "actor",
+      "label": "actor-producer-006",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00006",
+      "node_type": "lot",
+      "label": "lot-00006",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00006",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00006",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00006",
+      "node_type": "event",
+      "label": "evt-receive-00006",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T10:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00006",
+        "snapshot_id": "observed-42",
+        "quantity": 629.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00006",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00006",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00007",
+      "node_type": "event",
+      "label": "evt-prod-00007",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-02T05:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00007",
+        "snapshot_id": "observed-42",
+        "quantity": 600.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-007",
+      "node_type": "actor",
+      "label": "actor-producer-007",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00007",
+      "node_type": "lot",
+      "label": "lot-00007",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00007",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00007",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00007",
+      "node_type": "event",
+      "label": "evt-receive-00007",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T13:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00007",
+        "snapshot_id": "observed-42",
+        "quantity": 600.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00007",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00007",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00008",
+      "node_type": "event",
+      "label": "evt-prod-00008",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-02T08:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00008",
+        "snapshot_id": "observed-42",
+        "quantity": 644.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-008",
+      "node_type": "actor",
+      "label": "actor-producer-008",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00008",
+      "node_type": "lot",
+      "label": "lot-00008",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00008",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00008",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00008",
+      "node_type": "event",
+      "label": "evt-receive-00008",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T16:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00008",
+        "snapshot_id": "observed-42",
+        "quantity": 644.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00008",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00008",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00009",
+      "node_type": "event",
+      "label": "evt-prod-00009",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-02T11:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00009",
+        "snapshot_id": "observed-42",
+        "quantity": 537.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-009",
+      "node_type": "actor",
+      "label": "actor-producer-009",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00009",
+      "node_type": "lot",
+      "label": "lot-00009",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00009",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00009",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00009",
+      "node_type": "event",
+      "label": "evt-receive-00009",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T19:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00009",
+        "snapshot_id": "observed-42",
+        "quantity": 537.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-receive-00009",
+      "node_type": "evidence",
+      "label": "evidence-evt-receive-00009",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-prod-00010",
+      "node_type": "event",
+      "label": "evt-prod-00010",
+      "properties": {
+        "event_type": "production",
+        "timestamp": "2026-01-02T14:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "producer-record-00010",
+        "snapshot_id": "observed-42",
+        "quantity": 645.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "actor:observed-42:actor-producer-010",
+      "node_type": "actor",
+      "label": "actor-producer-010",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "lot:observed-42:lot-00010",
+      "node_type": "lot",
+      "label": "lot-00010",
+      "properties": {
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "evidence:observed-42:evidence-evt-prod-00010",
+      "node_type": "evidence",
+      "label": "evidence-evt-prod-00010",
+      "properties": {
+        "evidence_type": "delivery_receipt",
+        "snapshot_id": "observed-42",
+        "source_system": "synthetic_evidence"
+      }
+    },
+    {
+      "id": "event:observed-42:evt-receive-00010",
+      "node_type": "event",
+      "label": "evt-receive-00010",
+      "properties": {
+        "event_type": "receipt",
+        "timestamp": "2026-01-02T22:00:00+00:00",
+        "source_system": "synthetic_tracop",
+        "source_record_id": "receiver-record-00010",
+        "snapshot_id": "observed-42",
+        "quantity": 645.0,
+        "unit": "kg"
+      }
+    },
+    {
+      "id": "finding:gold-42:finding-quantity_compatibility-lot-00004-lot-00004-evt-receive-00004-evt-receive-00004",
+      "node_type": "finding",
+      "label": "quantity_compatibility",
+      "properties": {
+        "severity": "high",
+        "rule_id": "quantity_compatibility",
+        "explanation": "La cantidad reconciliada difiere en 6.6%; la relación requiere revisión operacional.",
+        "snapshot_id": "gold-42"
+      }
+    },
+    {
+      "id": "finding:observed-42:finding-required_evidence-lot-00010-lot-00010-evt-receive-00010",
+      "node_type": "finding",
+      "label": "required_evidence",
+      "properties": {
+        "severity": "medium",
+        "rule_id": "required_evidence",
+        "explanation": "El evento requiere evidencia de soporte, pero no tiene referencias asociadas.",
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00001",
+      "node_type": "trust_assessment",
+      "label": "lot-00001",
+      "properties": {
+        "score": 99.9825,
+        "uncapped_score": 99.9825,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00002",
+      "node_type": "trust_assessment",
+      "label": "lot-00002",
+      "properties": {
+        "score": 100.0,
+        "uncapped_score": 100.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00003",
+      "node_type": "trust_assessment",
+      "label": "lot-00003",
+      "properties": {
+        "score": 100.0,
+        "uncapped_score": 100.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00004",
+      "node_type": "trust_assessment",
+      "label": "lot-00004",
+      "properties": {
+        "score": 98.6654,
+        "uncapped_score": 98.6654,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00005",
+      "node_type": "trust_assessment",
+      "label": "lot-00005",
+      "properties": {
+        "score": 99.9814,
+        "uncapped_score": 99.9814,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00006",
+      "node_type": "trust_assessment",
+      "label": "lot-00006",
+      "properties": {
+        "score": 100.0,
+        "uncapped_score": 100.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00007",
+      "node_type": "trust_assessment",
+      "label": "lot-00007",
+      "properties": {
+        "score": 100.0,
+        "uncapped_score": 100.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00008",
+      "node_type": "trust_assessment",
+      "label": "lot-00008",
+      "properties": {
+        "score": 100.0,
+        "uncapped_score": 100.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00009",
+      "node_type": "trust_assessment",
+      "label": "lot-00009",
+      "properties": {
+        "score": 100.0,
+        "uncapped_score": 100.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    },
+    {
+      "id": "trust:observed-42:lot-00010",
+      "node_type": "trust_assessment",
+      "label": "lot-00010",
+      "properties": {
+        "score": 80.0,
+        "uncapped_score": 80.0,
+        "algorithm_version": "trust-score-v1",
+        "critical_penalties": []
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "event:observed-42:evt-prod-00001",
+      "target": "actor:observed-42:actor-producer-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00001",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00001",
+      "target": "lot:observed-42:lot-00001",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00001"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00001",
+      "target": "evidence:observed-42:evidence-evt-prod-00001",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00001",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00001",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00001",
+      "target": "event:observed-42:evt-receive-00001",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00001"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00001",
+      "target": "lot:observed-42:lot-00001",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00001"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00001",
+      "target": "evidence:observed-42:evidence-evt-receive-00001",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00002",
+      "target": "actor:observed-42:actor-producer-002",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00002",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00002",
+      "target": "lot:observed-42:lot-00002",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00002"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00002",
+      "target": "evidence:observed-42:evidence-evt-prod-00002",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00002",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00002",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00002",
+      "target": "event:observed-42:evt-receive-00002",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00002"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00002",
+      "target": "lot:observed-42:lot-00002",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00002"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00002",
+      "target": "evidence:observed-42:evidence-evt-receive-00002",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00003",
+      "target": "actor:observed-42:actor-producer-003",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00003",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00003",
+      "target": "lot:observed-42:lot-00003",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00003"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00003",
+      "target": "evidence:observed-42:evidence-evt-prod-00003",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00003",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00003",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00003",
+      "target": "event:observed-42:evt-receive-00003",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00003"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00003",
+      "target": "lot:observed-42:lot-00003",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00003"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00003",
+      "target": "evidence:observed-42:evidence-evt-receive-00003",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00004",
+      "target": "actor:observed-42:actor-producer-004",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00004",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00004",
+      "target": "lot:observed-42:lot-00004",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00004"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00004",
+      "target": "evidence:observed-42:evidence-evt-prod-00004",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00004",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00004",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00004",
+      "target": "event:observed-42:evt-receive-00004",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00004"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00004",
+      "target": "lot:observed-42:lot-00004",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00004"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00004",
+      "target": "evidence:observed-42:evidence-evt-receive-00004",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00005",
+      "target": "actor:observed-42:actor-producer-005",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00005",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00005",
+      "target": "lot:observed-42:lot-00005",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00005"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00005",
+      "target": "evidence:observed-42:evidence-evt-prod-00005",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00005",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00005",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00005",
+      "target": "event:observed-42:evt-receive-00005",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00005"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00005",
+      "target": "lot:observed-42:lot-00005",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00005"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00005",
+      "target": "evidence:observed-42:evidence-evt-receive-00005",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00006",
+      "target": "actor:observed-42:actor-producer-006",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00006",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00006",
+      "target": "lot:observed-42:lot-00006",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00006"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00006",
+      "target": "evidence:observed-42:evidence-evt-prod-00006",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00006",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00006",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00006",
+      "target": "event:observed-42:evt-receive-00006",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00006"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00006",
+      "target": "lot:observed-42:lot-00006",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00006"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00006",
+      "target": "evidence:observed-42:evidence-evt-receive-00006",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00007",
+      "target": "actor:observed-42:actor-producer-007",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00007",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00007",
+      "target": "lot:observed-42:lot-00007",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00007"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00007",
+      "target": "evidence:observed-42:evidence-evt-prod-00007",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00007",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00007",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00007",
+      "target": "event:observed-42:evt-receive-00007",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00007"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00007",
+      "target": "lot:observed-42:lot-00007",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00007"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00007",
+      "target": "evidence:observed-42:evidence-evt-receive-00007",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00008",
+      "target": "actor:observed-42:actor-producer-008",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00008",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00008",
+      "target": "lot:observed-42:lot-00008",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00008"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00008",
+      "target": "evidence:observed-42:evidence-evt-prod-00008",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00008",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00008",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00008",
+      "target": "event:observed-42:evt-receive-00008",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00008"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00008",
+      "target": "lot:observed-42:lot-00008",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00008"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00008",
+      "target": "evidence:observed-42:evidence-evt-receive-00008",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00009",
+      "target": "actor:observed-42:actor-producer-009",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00009",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00009",
+      "target": "lot:observed-42:lot-00009",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00009"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00009",
+      "target": "evidence:observed-42:evidence-evt-prod-00009",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00009",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00009",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00009",
+      "target": "event:observed-42:evt-receive-00009",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00009"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00009",
+      "target": "lot:observed-42:lot-00009",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00009"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00009",
+      "target": "evidence:observed-42:evidence-evt-receive-00009",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00010",
+      "target": "actor:observed-42:actor-producer-010",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00010",
+      "target": "organization:observed-42:org-producers-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-prod-00010",
+      "target": "lot:observed-42:lot-00010",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-prod-00010"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-prod-00010",
+      "target": "evidence:observed-42:evidence-evt-prod-00010",
+      "relation": "supported_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00010",
+      "target": "actor:observed-42:actor-receiver-001",
+      "relation": "performed_by",
+      "properties": {}
+    },
+    {
+      "source": "event:observed-42:evt-receive-00010",
+      "target": "organization:observed-42:org-collection-demo",
+      "relation": "recorded_by",
+      "properties": {}
+    },
+    {
+      "source": "lot:observed-42:lot-00010",
+      "target": "event:observed-42:evt-receive-00010",
+      "relation": "input_to",
+      "properties": {
+        "source_event_id": "evt-receive-00010"
+      }
+    },
+    {
+      "source": "event:observed-42:evt-receive-00010",
+      "target": "lot:observed-42:lot-00010",
+      "relation": "produces",
+      "properties": {
+        "source_event_id": "evt-receive-00010"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00001",
+      "target": "event:observed-42:evt-prod-00001",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00001-evt-prod-00001",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00001",
+      "target": "event:observed-42:evt-receive-00001",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00001-evt-receive-00001",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 0.997667,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00002",
+      "target": "event:observed-42:evt-prod-00002",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00002-evt-prod-00002",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00002",
+      "target": "event:observed-42:evt-receive-00002",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00002-evt-receive-00002",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00003",
+      "target": "event:observed-42:evt-prod-00003",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00003-evt-prod-00003",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00003",
+      "target": "event:observed-42:evt-receive-00003",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00003-evt-receive-00003",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00004",
+      "target": "event:observed-42:evt-prod-00004",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00004-evt-prod-00004",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00004",
+      "target": "event:observed-42:evt-receive-00004",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00004-evt-receive-00004",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 0.996725,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00005",
+      "target": "event:observed-42:evt-prod-00005",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00005-evt-prod-00005",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00005",
+      "target": "event:observed-42:evt-receive-00005",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00005-evt-receive-00005",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 0.997517,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00006",
+      "target": "event:observed-42:evt-prod-00006",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00006-evt-prod-00006",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00006",
+      "target": "event:observed-42:evt-receive-00006",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00006-evt-receive-00006",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00007",
+      "target": "event:observed-42:evt-prod-00007",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00007-evt-prod-00007",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00007",
+      "target": "event:observed-42:evt-receive-00007",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00007-evt-receive-00007",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00008",
+      "target": "event:observed-42:evt-prod-00008",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00008-evt-prod-00008",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00008",
+      "target": "event:observed-42:evt-receive-00008",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00008-evt-receive-00008",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00009",
+      "target": "event:observed-42:evt-prod-00009",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00009-evt-prod-00009",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00009",
+      "target": "event:observed-42:evt-receive-00009",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00009-evt-receive-00009",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-prod-00010",
+      "target": "event:observed-42:evt-prod-00010",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-prod-00010-evt-prod-00010",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "event:gold-42:evt-receive-00010",
+      "target": "event:observed-42:evt-receive-00010",
+      "relation": "reconciles_with",
+      "properties": {
+        "match_id": "match-evt-receive-00010-evt-receive-00010",
+        "status": "match",
+        "relation_kind": "RECORDED",
+        "score": 1.0,
+        "algorithm_version": "reconciliation-v1"
+      }
+    },
+    {
+      "source": "finding:observed-42:finding-required_evidence-lot-00010-lot-00010-evt-receive-00010",
+      "target": "event:observed-42:evt-receive-00010",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:observed-42:finding-required_evidence-lot-00010-lot-00010-evt-receive-00010",
+      "target": "lot:observed-42:lot-00010",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00001",
+      "target": "lot:observed-42:lot-00001",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00002",
+      "target": "lot:observed-42:lot-00002",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00003",
+      "target": "lot:observed-42:lot-00003",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00004",
+      "target": "lot:observed-42:lot-00004",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00005",
+      "target": "lot:observed-42:lot-00005",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00006",
+      "target": "lot:observed-42:lot-00006",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00007",
+      "target": "lot:observed-42:lot-00007",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00008",
+      "target": "lot:observed-42:lot-00008",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00009",
+      "target": "lot:observed-42:lot-00009",
+      "relation": "assesses",
+      "properties": {}
+    },
+    {
+      "source": "trust:observed-42:lot-00010",
+      "target": "lot:observed-42:lot-00010",
+      "relation": "assesses",
+      "properties": {}
+    }
+  ]
+}
