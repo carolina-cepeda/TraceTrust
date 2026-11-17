@@ -25,6 +25,9 @@ function renderGlobal(){
   const edges=graphData.edges.filter(e=>pos[e.source]&&pos[e.target]);svg.innerHTML+=edges.map(e=>{const a=pos[e.source],b=pos[e.target];return `<line class="edge" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" marker-end="url(#arrow)"/>`}).join('');
   svg.innerHTML+=nodes.map(n=>{const p=pos[n.id],fill=color(n.node_type);return `<g data-global-node="${esc(n.id)}" data-lot="${n.node_type==='lot'?esc(n.label):''}"><circle class="node" cx="${p.x}" cy="${p.y}" r="${n.node_type==='lot'?14:9}" style="fill:${fill};stroke:#fff;stroke-width:2.5px"/><text class="node-label" x="${p.x+18}" y="${p.y+4}">${esc((n.label||n.id).slice(0,24))}</text></g>`}).join('');
   $('graph-info').textContent=`Vista global · ${lots.length} lotes · ${findings.length} hallazgos`;
+  const average=$('metrics').querySelector('.score')?.textContent?.trim()||'—';
+  $('score').innerHTML=`<div class="metric score">${average??'—'} / 100</div><p class="subtle">Trust Score promedio del snapshot seleccionado. Selecciona un lote para ver su puntuación individual y los factores explicables.</p>`;
+  $('factors').innerHTML='<div class="empty" style="min-height:120px">Vista global · selecciona un lote para inspeccionar sus factores</div>';
   svg.querySelectorAll('g[data-global-node][data-lot]').forEach(el=>el.addEventListener('click',()=>{if(!el.dataset.lot)return;$('lot').value=el.dataset.lot;mode='detail';refresh()}));
 }
 function renderGraph(focus){

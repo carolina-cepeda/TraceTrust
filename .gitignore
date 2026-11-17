@@ -9,6 +9,22 @@ snapshots/
 __pycache__/
 .pytest_cache/
 .venv/
+tmp/
+*.pyc
+*.pyo
+.vscode/
+.idea/
+.DS_Store
+
+# Local presentation and delivery artifacts stay outside the product repo
+paper*.pdf
+docs/paper*.md
+docs/guion-presentacion*.md
+scripts/render_paper.py
+TraceTrust-presentacion*.pptx
+docs/diagrams/gamma-companions/
+docs/diagrams/gamma-companions-v2/
+docs/diagrams/presentation-png/
 
 # Graphify generated graph, reports, visualizations and extraction cache
 graphify-out/

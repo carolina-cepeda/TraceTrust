@@ -11,6 +11,15 @@ from .models import GraphEdge, GraphNode, TraceGraphArtifact
 
 
 RELATION_PATTERN = re.compile(r"^[A-Z][A-Z0-9_]*$")
+NODE_LABELS = {
+    "lot": "Lot",
+    "event": "Event",
+    "evidence": "Evidence",
+    "finding": "Finding",
+    "actor": "Actor",
+    "organization": "Organization",
+    "trust_assessment": "TrustAssessment",
+}
 
 
 def _relation_type(relation: str) -> str:
@@ -29,6 +38,11 @@ def _node_properties(node: GraphNode) -> dict[str, str]:
         "snapshot_id": snapshot_id,
         "properties_json": json.dumps(node.properties, ensure_ascii=False, sort_keys=True),
     }
+
+
+def _node_label(node_type: str) -> str:
+    """Return a safe, human-readable Neo4j label for Browser styling."""
+    return NODE_LABELS.get(node_type, "TraceNode")
 
 
 def export_cypher(artifact: TraceGraphArtifact, output: str | Path) -> None:
@@ -81,6 +95,12 @@ def push_neo4j(artifact: TraceGraphArtifact, uri: str, username: str, password: 
                 "n.properties_json=node.properties_json",
                 nodes=[_node_properties(node) for node in artifact.nodes],
             ).consume()
+            for node_type, label in sorted({(node.node_type, _node_label(node.node_type))
+                                             for node in artifact.nodes}):
+                session.run(
+                    f"MATCH (n:TraceNode {{node_type: $node_type}}) SET n:{label}",
+                    node_type=node_type,
+                ).consume()
             for relation in sorted({_relation_type(edge.relation) for edge in artifact.edges}):
                 edges = [{
                     "source": edge.source, "target": edge.target,

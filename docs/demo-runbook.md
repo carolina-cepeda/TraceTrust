@@ -64,5 +64,5 @@ Abrir `http://127.0.0.1:8000/`. La aplicación usa `data/demo` por defecto.
 La demo trabaja offline sobre snapshots y usa datos sintéticos controlados. El
 adaptador Neo4j exporta Cypher y el adaptador PostgreSQL implementa el esquema y
 la escritura, pero no se presentan como infraestructura desplegada en vivo.
-GraphSAGE/RAG queda como línea experimental posterior; la demo implementa la
-Arquitectura A del paper con componentes reproducibles y auditables.
+GraphSAGE/RAG queda como evolución posterior; la demo implementa la
+arquitectura actual con componentes reproducibles y auditables.

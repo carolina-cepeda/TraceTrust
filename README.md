@@ -1,9 +1,9 @@
 # TraceTrust
 
-TraceTrust es un MVP académico para analizar snapshots operacionales sin
-modificar el sistema fuente. Normaliza eventos, reconcilia exportaciones,
-detecta anomalías, calcula confianza explicable y proyecta la trazabilidad en
-un grafo consultable.
+TraceTrust es un MVP de producto para convertir datos operacionales dispersos
+en trazabilidad consultable, explicable y auditable sin modificar el sistema
+fuente. Normaliza eventos, reconcilia exportaciones, detecta anomalías, calcula
+confianza explicable y proyecta la trazabilidad en un grafo consultable.
 
 ## Demo rápida
 
@@ -57,13 +57,17 @@ python -m tracetrust.benchmarks data/demo/observed/events.jsonl data/demo/reconc
 Para el adaptador PostgreSQL: `pip install -e ".[postgres]"`. Para Neo4j:
 `pip install -e ".[neo4j]"`.
 
+La proyección opcional para explorar el grafo en Neo4j Browser está documentada
+en docs/neo4j-browser.md.
+
 ## Alcance y límites
 
-La demo implementa la Arquitectura A del paper: procesamiento offline/batch,
-reglas deterministas, Isolation Forest, Trust Score y almacenamiento orientado a
-consultas. GraphSAGE/RAG queda como línea experimental posterior. Los datos de
-`data/demo` son sintéticos y los adaptadores externos no implican que exista una
-infraestructura PostgreSQL/Neo4j desplegada en vivo.
+La versión actual implementa procesamiento offline/batch, reglas deterministas,
+Isolation Forest, Trust Score y almacenamiento orientado a consultas. Los datos
+de data/demo son sintéticos y los adaptadores externos no implican que exista
+una infraestructura PostgreSQL/Neo4j desplegada en vivo. La evolución prevista
+incluye conectores empresariales, operación continua, controles de acceso,
+observabilidad y modelos relacionales.
 
 En despliegues protegidos configurar `TRACETRUST_API_KEY` y enviar `X-API-Key`.
 En desarrollo la autenticación está desactivada.

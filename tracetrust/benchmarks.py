@@ -1,4 +1,4 @@
-"""Comparable tabular anomaly detectors for the academic evaluation."""
+"""Comparable tabular anomaly detectors for product validation."""
 
 from __future__ import annotations
 

@@ -11,7 +11,7 @@ TraceTrust no modifica la fuente operacional y no convierte una inferencia en un
 hecho. Cada afirmación debe conservar su origen, tipo de relación y nivel de
 confianza.
 
-## Principios derivados del paper 2
+## Principios de producto
 
 1. **El grafo es una proyección analítica, no la fuente original.** PostgreSQL
    conserva el snapshot, los eventos canónicos, las relaciones y los resultados
