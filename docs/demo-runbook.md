@@ -11,6 +11,28 @@ python -m unittest discover -s tests -v
 uvicorn tracetrust.api:app --reload
 ```
 
+Para una demostración visual más completa, usar el escenario multi-etapa:
+
+```powershell
+python -m tracetrust.complex_demo data/demo-complex --lots 12 --seed 84
+python -m tracetrust.demo data/demo-complex
+$env:TRACETRUST_DATA_ROOT = "data/demo-complex"
+uvicorn tracetrust.api:app --reload
+```
+
+Para la demo de detección de inconsistencias:
+
+```powershell
+python -m tracetrust.robust_demo data/demo-robust-126 --lots 16 --seed 126
+python -m tracetrust.demo data/demo-robust-126
+$env:TRACETRUST_DATA_ROOT = "data/demo-robust-126"
+uvicorn tracetrust.api:app --reload
+```
+
+Seleccionar `observed-126` y explorar los lotes `lot-00003`, `lot-00006` y
+`lot-00010`: muestran respectivamente inversión temporal, referencia huérfana y
+deriva de organización, además de discrepancias de cantidad y evidencia faltante.
+
 Abrir `http://127.0.0.1:8000/`. La aplicación usa `data/demo` por defecto.
 
 ## Narrativa sugerida
@@ -33,6 +55,7 @@ Abrir `http://127.0.0.1:8000/`. La aplicación usa `data/demo` por defecto.
 - 6 hallazgos combinando reglas y anomalías; los factores del Trust Score son
   visibles y trazables.
 - Proyección de grafo con nodos de eventos, lotes, evidencias y hallazgos.
+- Escenario complejo: 12 lotes y 72 eventos en seis etapas operacionales.
 - 15 pruebas automatizadas pasando; `pipeline_summary.json`, `evaluation.json`,
   `benchmarks.json` y `calibration.json` respaldan la explicación.
 

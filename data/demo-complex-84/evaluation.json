@@ -1,0 +1,18 @@
+{
+  "dataset_seed": 84,
+  "metrics": {
+    "reconciliation_precision": 1.0,
+    "reconciliation_recall": 1.0,
+    "reconciliation_f1": 1.0,
+    "finding_precision": 0.875,
+    "finding_recall": 1.0,
+    "finding_f1": 0.933333
+  },
+  "details": {
+    "expected_matches": 72,
+    "predicted_matches": 72,
+    "expected_perturbations": 7,
+    "predicted_perturbations": 8
+  },
+  "evaluation_version": "evaluation-v1"
+}

@@ -17,6 +17,24 @@ uvicorn tracetrust.api:app --reload
 Abrir `http://127.0.0.1:8000/` para el dashboard. El guion completo está en
 [`docs/demo-runbook.md`](docs/demo-runbook.md).
 
+Para ver una cadena operacional más rica:
+
+```powershell
+python -m tracetrust.complex_demo data/demo-complex-84 --lots 12 --seed 84
+python -m tracetrust.demo data/demo-complex-84
+$env:TRACETRUST_DATA_ROOT = "data/demo-complex-84"
+uvicorn tracetrust.api:app --reload
+```
+
+Para una demo adversarial con inconsistencias intencionales:
+
+```powershell
+python -m tracetrust.robust_demo data/demo-robust-126 --lots 16 --seed 126
+python -m tracetrust.demo data/demo-robust-126
+$env:TRACETRUST_DATA_ROOT = "data/demo-robust-126"
+uvicorn tracetrust.api:app --reload
+```
+
 ## Flujo técnico
 
 `manifiesto validado → eventos canónicos → reconciliación explicable → reglas +

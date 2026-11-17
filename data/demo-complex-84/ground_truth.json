@@ -1,0 +1,334 @@
+{
+  "seed": 84,
+  "lots": 12,
+  "profile": "complex",
+  "gold_snapshot_id": "gold-84",
+  "observed_snapshot_id": "observed-84",
+  "expected_record_matches": 72,
+  "expected_event_matches": [
+    {
+      "left_event_id": "evt-production-00001",
+      "right_event_id": "evt-production-00001"
+    },
+    {
+      "left_event_id": "evt-receipt-00001",
+      "right_event_id": "evt-receipt-00001"
+    },
+    {
+      "left_event_id": "evt-processing-00001",
+      "right_event_id": "evt-processing-00001"
+    },
+    {
+      "left_event_id": "evt-shipping-00001",
+      "right_event_id": "evt-shipping-00001"
+    },
+    {
+      "left_event_id": "evt-packaging-00001",
+      "right_event_id": "evt-packaging-00001"
+    },
+    {
+      "left_event_id": "evt-delivery-00001",
+      "right_event_id": "evt-delivery-00001"
+    },
+    {
+      "left_event_id": "evt-production-00002",
+      "right_event_id": "evt-production-00002"
+    },
+    {
+      "left_event_id": "evt-receipt-00002",
+      "right_event_id": "evt-receipt-00002"
+    },
+    {
+      "left_event_id": "evt-processing-00002",
+      "right_event_id": "evt-processing-00002"
+    },
+    {
+      "left_event_id": "evt-shipping-00002",
+      "right_event_id": "evt-shipping-00002"
+    },
+    {
+      "left_event_id": "evt-packaging-00002",
+      "right_event_id": "evt-packaging-00002"
+    },
+    {
+      "left_event_id": "evt-delivery-00002",
+      "right_event_id": "evt-delivery-00002"
+    },
+    {
+      "left_event_id": "evt-production-00003",
+      "right_event_id": "evt-production-00003"
+    },
+    {
+      "left_event_id": "evt-receipt-00003",
+      "right_event_id": "evt-receipt-00003"
+    },
+    {
+      "left_event_id": "evt-processing-00003",
+      "right_event_id": "evt-processing-00003"
+    },
+    {
+      "left_event_id": "evt-shipping-00003",
+      "right_event_id": "evt-shipping-00003"
+    },
+    {
+      "left_event_id": "evt-packaging-00003",
+      "right_event_id": "evt-packaging-00003"
+    },
+    {
+      "left_event_id": "evt-delivery-00003",
+      "right_event_id": "evt-delivery-00003"
+    },
+    {
+      "left_event_id": "evt-production-00004",
+      "right_event_id": "evt-production-00004"
+    },
+    {
+      "left_event_id": "evt-receipt-00004",
+      "right_event_id": "evt-receipt-00004"
+    },
+    {
+      "left_event_id": "evt-processing-00004",
+      "right_event_id": "evt-processing-00004"
+    },
+    {
+      "left_event_id": "evt-shipping-00004",
+      "right_event_id": "evt-shipping-00004"
+    },
+    {
+      "left_event_id": "evt-packaging-00004",
+      "right_event_id": "evt-packaging-00004"
+    },
+    {
+      "left_event_id": "evt-delivery-00004",
+      "right_event_id": "evt-delivery-00004"
+    },
+    {
+      "left_event_id": "evt-production-00005",
+      "right_event_id": "evt-production-00005"
+    },
+    {
+      "left_event_id": "evt-receipt-00005",
+      "right_event_id": "evt-receipt-00005"
+    },
+    {
+      "left_event_id": "evt-processing-00005",
+      "right_event_id": "evt-processing-00005"
+    },
+    {
+      "left_event_id": "evt-shipping-00005",
+      "right_event_id": "evt-shipping-00005"
+    },
+    {
+      "left_event_id": "evt-packaging-00005",
+      "right_event_id": "evt-packaging-00005"
+    },
+    {
+      "left_event_id": "evt-delivery-00005",
+      "right_event_id": "evt-delivery-00005"
+    },
+    {
+      "left_event_id": "evt-production-00006",
+      "right_event_id": "evt-production-00006"
+    },
+    {
+      "left_event_id": "evt-receipt-00006",
+      "right_event_id": "evt-receipt-00006"
+    },
+    {
+      "left_event_id": "evt-processing-00006",
+      "right_event_id": "evt-processing-00006"
+    },
+    {
+      "left_event_id": "evt-shipping-00006",
+      "right_event_id": "evt-shipping-00006"
+    },
+    {
+      "left_event_id": "evt-packaging-00006",
+      "right_event_id": "evt-packaging-00006"
+    },
+    {
+      "left_event_id": "evt-delivery-00006",
+      "right_event_id": "evt-delivery-00006"
+    },
+    {
+      "left_event_id": "evt-production-00007",
+      "right_event_id": "evt-production-00007"
+    },
+    {
+      "left_event_id": "evt-receipt-00007",
+      "right_event_id": "evt-receipt-00007"
+    },
+    {
+      "left_event_id": "evt-processing-00007",
+      "right_event_id": "evt-processing-00007"
+    },
+    {
+      "left_event_id": "evt-shipping-00007",
+      "right_event_id": "evt-shipping-00007"
+    },
+    {
+      "left_event_id": "evt-packaging-00007",
+      "right_event_id": "evt-packaging-00007"
+    },
+    {
+      "left_event_id": "evt-delivery-00007",
+      "right_event_id": "evt-delivery-00007"
+    },
+    {
+      "left_event_id": "evt-production-00008",
+      "right_event_id": "evt-production-00008"
+    },
+    {
+      "left_event_id": "evt-receipt-00008",
+      "right_event_id": "evt-receipt-00008"
+    },
+    {
+      "left_event_id": "evt-processing-00008",
+      "right_event_id": "evt-processing-00008"
+    },
+    {
+      "left_event_id": "evt-shipping-00008",
+      "right_event_id": "evt-shipping-00008"
+    },
+    {
+      "left_event_id": "evt-packaging-00008",
+      "right_event_id": "evt-packaging-00008"
+    },
+    {
+      "left_event_id": "evt-delivery-00008",
+      "right_event_id": "evt-delivery-00008"
+    },
+    {
+      "left_event_id": "evt-production-00009",
+      "right_event_id": "evt-production-00009"
+    },
+    {
+      "left_event_id": "evt-receipt-00009",
+      "right_event_id": "evt-receipt-00009"
+    },
+    {
+      "left_event_id": "evt-processing-00009",
+      "right_event_id": "evt-processing-00009"
+    },
+    {
+      "left_event_id": "evt-shipping-00009",
+      "right_event_id": "evt-shipping-00009"
+    },
+    {
+      "left_event_id": "evt-packaging-00009",
+      "right_event_id": "evt-packaging-00009"
+    },
+    {
+      "left_event_id": "evt-delivery-00009",
+      "right_event_id": "evt-delivery-00009"
+    },
+    {
+      "left_event_id": "evt-production-00010",
+      "right_event_id": "evt-production-00010"
+    },
+    {
+      "left_event_id": "evt-receipt-00010",
+      "right_event_id": "evt-receipt-00010"
+    },
+    {
+      "left_event_id": "evt-processing-00010",
+      "right_event_id": "evt-processing-00010"
+    },
+    {
+      "left_event_id": "evt-shipping-00010",
+      "right_event_id": "evt-shipping-00010"
+    },
+    {
+      "left_event_id": "evt-packaging-00010",
+      "right_event_id": "evt-packaging-00010"
+    },
+    {
+      "left_event_id": "evt-delivery-00010",
+      "right_event_id": "evt-delivery-00010"
+    },
+    {
+      "left_event_id": "evt-production-00011",
+      "right_event_id": "evt-production-00011"
+    },
+    {
+      "left_event_id": "evt-receipt-00011",
+      "right_event_id": "evt-receipt-00011"
+    },
+    {
+      "left_event_id": "evt-processing-00011",
+      "right_event_id": "evt-processing-00011"
+    },
+    {
+      "left_event_id": "evt-shipping-00011",
+      "right_event_id": "evt-shipping-00011"
+    },
+    {
+      "left_event_id": "evt-packaging-00011",
+      "right_event_id": "evt-packaging-00011"
+    },
+    {
+      "left_event_id": "evt-delivery-00011",
+      "right_event_id": "evt-delivery-00011"
+    },
+    {
+      "left_event_id": "evt-production-00012",
+      "right_event_id": "evt-production-00012"
+    },
+    {
+      "left_event_id": "evt-receipt-00012",
+      "right_event_id": "evt-receipt-00012"
+    },
+    {
+      "left_event_id": "evt-processing-00012",
+      "right_event_id": "evt-processing-00012"
+    },
+    {
+      "left_event_id": "evt-shipping-00012",
+      "right_event_id": "evt-shipping-00012"
+    },
+    {
+      "left_event_id": "evt-packaging-00012",
+      "right_event_id": "evt-packaging-00012"
+    },
+    {
+      "left_event_id": "evt-delivery-00012",
+      "right_event_id": "evt-delivery-00012"
+    }
+  ],
+  "perturbations": [
+    {
+      "type": "quantity_discrepancy",
+      "event_id": "evt-shipping-00004",
+      "expected_quantity": 490.68,
+      "observed_quantity": 545.68
+    },
+    {
+      "type": "missing_evidence",
+      "event_id": "evt-processing-00005"
+    },
+    {
+      "type": "missing_evidence",
+      "event_id": "evt-delivery-00005"
+    },
+    {
+      "type": "quantity_discrepancy",
+      "event_id": "evt-shipping-00008",
+      "expected_quantity": 709.7,
+      "observed_quantity": 764.7
+    },
+    {
+      "type": "missing_evidence",
+      "event_id": "evt-processing-00010"
+    },
+    {
+      "type": "missing_evidence",
+      "event_id": "evt-delivery-00010"
+    },
+    {
+      "type": "quantity_discrepancy",
+      "event_id": "evt-shipping-00012",
+      "expected_quantity": 781.14,
+      "observed_quantity": 836.14
+    }
+  ]
+}

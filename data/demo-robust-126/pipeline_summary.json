@@ -1,0 +1,19 @@
+{
+  "pipeline_version": "pipeline-v1",
+  "gold_events": 96,
+  "observed_events": 96,
+  "matches": 96,
+  "findings": 23,
+  "anomalies": 10,
+  "trust_assessments": 49,
+  "graph_nodes": 505,
+  "graph_edges": 653,
+  "evaluation": {
+    "reconciliation_precision": 1.0,
+    "reconciliation_recall": 1.0,
+    "reconciliation_f1": 1.0,
+    "finding_precision": 0.857143,
+    "finding_recall": 0.923077,
+    "finding_f1": 0.888889
+  }
+}

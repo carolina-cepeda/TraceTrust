@@ -94,7 +94,10 @@ def impossible_temporal_sequence(events: list[CanonicalTraceabilityEvent]) -> li
             by_lot.setdefault(lot_id, []).append(event)
     findings = []
     for lot_id, lot_events in by_lot.items():
-        productions = [e for e in lot_events if e.event_type in {EventType.PRODUCTION, EventType.TRANSFORMATION}]
+        # A receipt can legitimately precede a later transformation of the
+        # received lot. Temporal validation therefore compares it with the
+        # origin event, not every downstream transformation.
+        productions = [e for e in lot_events if e.event_type == EventType.PRODUCTION]
         receipts = [e for e in lot_events if e.event_type == EventType.RECEIPT]
         for receipt in receipts:
             for production in productions:

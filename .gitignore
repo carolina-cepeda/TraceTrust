@@ -13,3 +13,13 @@ __pycache__/
 # Graphify generated graph, reports, visualizations and extraction cache
 graphify-out/
 *.db
+*.sqlite
+*.sqlite3
+*.log
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.ruff_cache/
+.mypy_cache/

@@ -1,0 +1,31 @@
+{
+  "snapshot_id": "observed-126",
+  "source_system": "synthetic_tracop",
+  "extracted_at": "2026-11-17T01:54:22.907862Z",
+  "schema_version": "1.0.0",
+  "source_schema": {
+    "database_engine": "synthetic",
+    "migration_ids": [
+      "complex-demo-001"
+    ]
+  },
+  "exporter_version": "tracetrust-complex-generator-0.1.0",
+  "anonymization": {
+    "profile": "synthetic-strict",
+    "names_removed": true,
+    "phones_removed": true,
+    "actor_ids_pseudonymized": true,
+    "precise_locations_removed": true,
+    "media_refs_removed": true
+  },
+  "files": [
+    {
+      "path": "events.jsonl",
+      "format": "jsonl",
+      "row_count": 96,
+      "sha256": "477430a6dc4552b6bfbf7589a1bc4ecef09924bd320af33d91ade8ebb516c7e3",
+      "min_server_seq": null,
+      "max_server_seq": null
+    }
+  ]
+}
