@@ -63,13 +63,22 @@ class SQLiteAnalysisRepository:
         connection.row_factory = sqlite3.Row
         return connection
 
-    def snapshot(self) -> SnapshotBundle:
+    def snapshot_ids(self) -> list[str]:
+        with closing(self._connect()) as connection:
+            rows = connection.execute("SELECT snapshot_id FROM snapshots ORDER BY snapshot_id").fetchall()
+            return [row["snapshot_id"] for row in rows]
+
+    def snapshot(self, snapshot_id: str | None = None) -> SnapshotBundle:
         from .models import SnapshotManifest, CanonicalTraceabilityEvent
 
         with closing(self._connect()) as connection:
-            row = connection.execute("SELECT manifest_json FROM snapshots ORDER BY snapshot_id LIMIT 1").fetchone()
+            if snapshot_id is None:
+                row = connection.execute("SELECT manifest_json FROM snapshots ORDER BY snapshot_id LIMIT 1").fetchone()
+            else:
+                row = connection.execute("SELECT manifest_json FROM snapshots WHERE snapshot_id = ?",
+                                          (snapshot_id,)).fetchone()
             if row is None:
-                raise FileNotFoundError("No snapshot stored")
+                raise ValueError(f"Unknown snapshot: {snapshot_id}" if snapshot_id else "No snapshot stored")
             manifest = SnapshotManifest.model_validate_json(row["manifest_json"])
             event_rows = connection.execute(
                 "SELECT event_json FROM events WHERE snapshot_id = ? ORDER BY event_id",
@@ -93,9 +102,12 @@ class SQLiteAnalysisRepository:
             rows = connection.execute("SELECT assessment_json FROM trust_assessments ORDER BY entity_id").fetchall()
             return [TrustAssessment.model_validate_json(row["assessment_json"]) for row in rows]
 
-    def graph(self) -> TraceGraphArtifact:
+    def graph(self, snapshot_id: str | None = None) -> TraceGraphArtifact:
         with closing(self._connect()) as connection:
-            row = connection.execute("SELECT graph_json FROM graphs LIMIT 1").fetchone()
+            if snapshot_id is None:
+                row = connection.execute("SELECT graph_json FROM graphs ORDER BY snapshot_id LIMIT 1").fetchone()
+            else:
+                row = connection.execute("SELECT graph_json FROM graphs WHERE snapshot_id = ?", (snapshot_id,)).fetchone()
             if row is None:
                 raise FileNotFoundError("No graph stored")
             return TraceGraphArtifact.model_validate_json(row["graph_json"])
@@ -113,30 +125,28 @@ def persist_analysis(source_root: str | Path, database: str | Path) -> None:
     try:
         with connection:
             connection.executescript(SCHEMA)
-            connection.execute("DELETE FROM snapshots")
-            connection.execute("DELETE FROM events")
-            connection.execute("DELETE FROM matches")
-            connection.execute("DELETE FROM findings")
-            connection.execute("DELETE FROM trust_assessments")
-            connection.execute("DELETE FROM graphs")
-            connection.execute("INSERT INTO snapshots VALUES (?, ?)",
+            connection.execute("DELETE FROM events WHERE snapshot_id = ?", (snapshot.manifest.snapshot_id,))
+            connection.execute("DELETE FROM findings WHERE snapshot_id = ?", (snapshot.manifest.snapshot_id,))
+            connection.execute("DELETE FROM trust_assessments WHERE snapshot_id = ?", (snapshot.manifest.snapshot_id,))
+            connection.execute("DELETE FROM graphs WHERE snapshot_id = ?", (snapshot.manifest.snapshot_id,))
+            connection.execute("INSERT OR REPLACE INTO snapshots VALUES (?, ?)",
                                (snapshot.manifest.snapshot_id, snapshot.manifest.model_dump_json()))
             connection.executemany(
                 "INSERT INTO events VALUES (?, ?, ?)",
                 [(event.snapshot_id, event.event_id, event.model_dump_json()) for event in snapshot.events],
             )
-            connection.executemany("INSERT INTO matches VALUES (?, ?)",
+            connection.executemany("INSERT OR REPLACE INTO matches VALUES (?, ?)",
                                    [(match.match_id, match.model_dump_json()) for match in matches])
             connection.executemany(
-                "INSERT INTO findings VALUES (?, ?, ?)",
+                "INSERT OR REPLACE INTO findings VALUES (?, ?, ?)",
                 [(finding.finding_id, finding.snapshot_id, finding.model_dump_json()) for finding in findings],
             )
             connection.executemany(
-                "INSERT INTO trust_assessments VALUES (?, ?, ?, ?)",
+                "INSERT OR REPLACE INTO trust_assessments VALUES (?, ?, ?, ?)",
                 [(assessment.assessment_id, assessment.snapshot_id, assessment.entity_id,
                   assessment.model_dump_json()) for assessment in assessments],
             )
-            connection.execute("INSERT INTO graphs VALUES (?, ?)",
+            connection.execute("INSERT OR REPLACE INTO graphs VALUES (?, ?)",
                                (snapshot.manifest.snapshot_id, graph.model_dump_json()))
     finally:
         connection.close()

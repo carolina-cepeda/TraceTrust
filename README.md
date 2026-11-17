@@ -1,27 +1,51 @@
 # TraceTrust
 
-TraceTrust es un repositorio independiente para análisis offline/batch de datos
-operacionales exportados. No se conecta en vivo a TRACOP y no escribe en su base
-de datos.
+TraceTrust es un MVP académico para analizar snapshots operacionales sin
+modificar el sistema fuente. Normaliza eventos, reconcilia exportaciones,
+detecta anomalías, calcula confianza explicable y proyecta la trazabilidad en
+un grafo consultable.
 
-## Primer prototipo
-
-El núcleo inicial define el evento canónico auditable y genera datasets
-reproducibles `gold`/`observed` con ground truth:
+## Demo rápida
 
 ```powershell
 python -m tracetrust.generator data/demo --lots 10 --seed 42
-python -m tracetrust.reconciliation data/demo/gold/events.jsonl data/demo/observed/events.jsonl data/demo/reconciliation.jsonl
-python -m tracetrust.rules data/demo/gold/events.jsonl data/demo/observed/events.jsonl data/demo/reconciliation.jsonl data/demo/findings.jsonl
-python -m tracetrust.trust_score data/demo/observed/events.jsonl data/demo/reconciliation.jsonl data/demo/findings.jsonl data/demo/trust_scores.jsonl
-python -m tracetrust.anomaly data/demo/observed/events.jsonl data/demo/reconciliation.jsonl data/demo/anomalies.jsonl
-python -m tracetrust.evaluation data/demo/ground_truth.json data/demo/reconciliation.jsonl data/demo/findings.jsonl data/demo/evaluation.json
-python -m tracetrust.graph project data/demo/observed/events.jsonl data/demo/reconciliation.jsonl data/demo/findings.jsonl data/demo/trust_scores.jsonl data/demo/trace_graph.json
-python -m tracetrust.graph query data/demo/trace_graph.json lot:observed-42:lot-00001 --direction ancestors
-uvicorn tracetrust.api:app --reload
+python -m tracetrust.demo data/demo
 python -m unittest discover -s tests -v
+uvicorn tracetrust.api:app --reload
 ```
 
-La salida contiene `gold/`, `observed/` y `ground_truth.json`. Las perturbaciones
-del dataset observado se registran explícitamente para evaluar reconciliación,
-reglas y anomalías.
+Abrir `http://127.0.0.1:8000/` para el dashboard. El guion completo está en
+[`docs/demo-runbook.md`](docs/demo-runbook.md).
+
+## Flujo técnico
+
+`manifiesto validado → eventos canónicos → reconciliación explicable → reglas +
+Isolation Forest → Trust Score → grafo → API v1/dashboard`
+
+El pipeline deja artefactos reproducibles en `data/demo/`: reconciliación,
+hallazgos, anomalías, evaluaciones, benchmarks, calibración, Trust Scores y
+export Cypher. La persistencia local usa SQLite como read model; PostgreSQL y
+Neo4j cuentan con adaptadores opcionales para despliegue.
+
+## Comandos individuales
+
+```powershell
+python -m tracetrust.pipeline data/demo
+python -m tracetrust.graph query data/demo/trace_graph.json lot:observed-42:lot-00001 --direction ancestors
+python -m tracetrust.neo4j data/demo/trace_graph.json data/demo/trace_graph.cypher
+python -m tracetrust.benchmarks data/demo/observed/events.jsonl data/demo/reconciliation.jsonl data/demo/ground_truth.json data/demo/benchmarks.json
+```
+
+Para el adaptador PostgreSQL: `pip install -e ".[postgres]"`. Para Neo4j:
+`pip install -e ".[neo4j]"`.
+
+## Alcance y límites
+
+La demo implementa la Arquitectura A del paper: procesamiento offline/batch,
+reglas deterministas, Isolation Forest, Trust Score y almacenamiento orientado a
+consultas. GraphSAGE/RAG queda como línea experimental posterior. Los datos de
+`data/demo` son sintéticos y los adaptadores externos no implican que exista una
+infraestructura PostgreSQL/Neo4j desplegada en vivo.
+
+En despliegues protegidos configurar `TRACETRUST_API_KEY` y enviar `X-API-Key`.
+En desarrollo la autenticación está desactivada.

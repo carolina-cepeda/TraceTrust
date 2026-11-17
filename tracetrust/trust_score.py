@@ -123,7 +123,7 @@ def calculate_trust_score(
         _factor("attribute_completeness", weights["attribute_completeness"], completeness,
                 f"{complete_events} de {len(entity_events)} eventos tienen atributos mínimos completos."),
     ]
-    uncapped = round(100 * sum(factor.contribution for factor in factors), 6)
+    uncapped = round(100 * _clamp(sum(factor.contribution for factor in factors)), 6)
     critical_penalties = sorted({finding.rule_id for finding in entity_findings
                                  if finding.severity == FindingSeverity.CRITICAL})
     score = min(uncapped, critical_cap) if critical_penalties else uncapped

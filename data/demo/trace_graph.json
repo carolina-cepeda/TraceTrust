@@ -59,7 +59,7 @@
         "source_system": "synthetic_tracop",
         "source_record_id": "receiver-record-00001",
         "snapshot_id": "observed-42",
-        "quantity": 643.0,
+        "quantity": 653.0,
         "unit": "kg"
       }
     },
@@ -267,7 +267,7 @@
         "source_system": "synthetic_tracop",
         "source_record_id": "receiver-record-00004",
         "snapshot_id": "observed-42",
-        "quantity": 428.0,
+        "quantity": 418.0,
         "unit": "kg"
       }
     },
@@ -331,7 +331,7 @@
         "source_system": "synthetic_tracop",
         "source_record_id": "receiver-record-00005",
         "snapshot_id": "observed-42",
-        "quantity": 574.0,
+        "quantity": 564.0,
         "unit": "kg"
       }
     },
@@ -656,7 +656,209 @@
       }
     },
     {
+      "id": "event:gold-42:evt-prod-00001",
+      "node_type": "event_reference",
+      "label": "evt-prod-00001",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00001",
+      "node_type": "event_reference",
+      "label": "evt-receive-00001",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00002",
+      "node_type": "event_reference",
+      "label": "evt-prod-00002",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00002",
+      "node_type": "event_reference",
+      "label": "evt-receive-00002",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00003",
+      "node_type": "event_reference",
+      "label": "evt-prod-00003",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00003",
+      "node_type": "event_reference",
+      "label": "evt-receive-00003",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00004",
+      "node_type": "event_reference",
+      "label": "evt-prod-00004",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00004",
+      "node_type": "event_reference",
+      "label": "evt-receive-00004",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00005",
+      "node_type": "event_reference",
+      "label": "evt-prod-00005",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00005",
+      "node_type": "event_reference",
+      "label": "evt-receive-00005",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00006",
+      "node_type": "event_reference",
+      "label": "evt-prod-00006",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00006",
+      "node_type": "event_reference",
+      "label": "evt-receive-00006",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00007",
+      "node_type": "event_reference",
+      "label": "evt-prod-00007",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00007",
+      "node_type": "event_reference",
+      "label": "evt-receive-00007",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00008",
+      "node_type": "event_reference",
+      "label": "evt-prod-00008",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00008",
+      "node_type": "event_reference",
+      "label": "evt-receive-00008",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00009",
+      "node_type": "event_reference",
+      "label": "evt-prod-00009",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00009",
+      "node_type": "event_reference",
+      "label": "evt-receive-00009",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-prod-00010",
+      "node_type": "event_reference",
+      "label": "evt-prod-00010",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "event:gold-42:evt-receive-00010",
+      "node_type": "event_reference",
+      "label": "evt-receive-00010",
+      "properties": {
+        "snapshot_id": "gold-42",
+        "external": true
+      }
+    },
+    {
+      "id": "finding:gold-42:finding-quantity_compatibility-lot-00001-lot-00001-evt-receive-00001-evt-receive-00001",
+      "node_type": "finding",
+      "label": "quantity_compatibility",
+      "properties": {
+        "severity": "high",
+        "rule_id": "quantity_compatibility",
+        "explanation": "La cantidad reconciliada difiere en 6.1%; la relación requiere revisión operacional.",
+        "snapshot_id": "gold-42"
+      }
+    },
+    {
       "id": "finding:gold-42:finding-quantity_compatibility-lot-00004-lot-00004-evt-receive-00004-evt-receive-00004",
+      "node_type": "finding",
+      "label": "quantity_compatibility",
+      "properties": {
+        "severity": "high",
+        "rule_id": "quantity_compatibility",
+        "explanation": "La cantidad reconciliada difiere en 8.7%; la relación requiere revisión operacional.",
+        "snapshot_id": "gold-42"
+      }
+    },
+    {
+      "id": "finding:gold-42:finding-quantity_compatibility-lot-00005-lot-00005-evt-receive-00005-evt-receive-00005",
       "node_type": "finding",
       "label": "quantity_compatibility",
       "properties": {
@@ -678,12 +880,34 @@
       }
     },
     {
+      "id": "finding:observed-42:finding-tabular-anomaly-evt-receive-00004",
+      "node_type": "finding",
+      "label": "isolation_forest_anomaly",
+      "properties": {
+        "severity": "medium",
+        "rule_id": "isolation_forest_anomaly",
+        "explanation": "Isolation Forest identificó un patrón estadísticamente atípico en el evento.",
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
+      "id": "finding:observed-42:finding-tabular-anomaly-evt-receive-00010",
+      "node_type": "finding",
+      "label": "isolation_forest_anomaly",
+      "properties": {
+        "severity": "medium",
+        "rule_id": "isolation_forest_anomaly",
+        "explanation": "Isolation Forest identificó un patrón estadísticamente atípico en el evento.",
+        "snapshot_id": "observed-42"
+      }
+    },
+    {
       "id": "trust:observed-42:lot-00001",
       "node_type": "trust_assessment",
       "label": "lot-00001",
       "properties": {
-        "score": 99.9825,
-        "uncapped_score": 99.9825,
+        "score": 99.977,
+        "uncapped_score": 99.977,
         "algorithm_version": "trust-score-v1",
         "critical_penalties": []
       }
@@ -715,8 +939,8 @@
       "node_type": "trust_assessment",
       "label": "lot-00004",
       "properties": {
-        "score": 98.6654,
-        "uncapped_score": 98.6654,
+        "score": 99.9672,
+        "uncapped_score": 99.9672,
         "algorithm_version": "trust-score-v1",
         "critical_penalties": []
       }
@@ -726,8 +950,8 @@
       "node_type": "trust_assessment",
       "label": "lot-00005",
       "properties": {
-        "score": 99.9814,
-        "uncapped_score": 99.9814,
+        "score": 99.9752,
+        "uncapped_score": 99.9752,
         "algorithm_version": "trust-score-v1",
         "critical_penalties": []
       }
@@ -1388,7 +1612,7 @@
       "target": "event:observed-42:evt-prod-00001",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00001-evt-prod-00001",
+        "match_id": "match-gold-42-evt-prod-00001-observed-42-evt-prod-00001",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1400,10 +1624,10 @@
       "target": "event:observed-42:evt-receive-00001",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00001-evt-receive-00001",
+        "match_id": "match-gold-42-evt-receive-00001-observed-42-evt-receive-00001",
         "status": "match",
         "relation_kind": "RECORDED",
-        "score": 0.997667,
+        "score": 0.996937,
         "algorithm_version": "reconciliation-v1"
       }
     },
@@ -1412,7 +1636,7 @@
       "target": "event:observed-42:evt-prod-00002",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00002-evt-prod-00002",
+        "match_id": "match-gold-42-evt-prod-00002-observed-42-evt-prod-00002",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1424,7 +1648,7 @@
       "target": "event:observed-42:evt-receive-00002",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00002-evt-receive-00002",
+        "match_id": "match-gold-42-evt-receive-00002-observed-42-evt-receive-00002",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1436,7 +1660,7 @@
       "target": "event:observed-42:evt-prod-00003",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00003-evt-prod-00003",
+        "match_id": "match-gold-42-evt-prod-00003-observed-42-evt-prod-00003",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1448,7 +1672,7 @@
       "target": "event:observed-42:evt-receive-00003",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00003-evt-receive-00003",
+        "match_id": "match-gold-42-evt-receive-00003-observed-42-evt-receive-00003",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1460,7 +1684,7 @@
       "target": "event:observed-42:evt-prod-00004",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00004-evt-prod-00004",
+        "match_id": "match-gold-42-evt-prod-00004-observed-42-evt-prod-00004",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1472,10 +1696,10 @@
       "target": "event:observed-42:evt-receive-00004",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00004-evt-receive-00004",
+        "match_id": "match-gold-42-evt-receive-00004-observed-42-evt-receive-00004",
         "status": "match",
         "relation_kind": "RECORDED",
-        "score": 0.996725,
+        "score": 0.995633,
         "algorithm_version": "reconciliation-v1"
       }
     },
@@ -1484,7 +1708,7 @@
       "target": "event:observed-42:evt-prod-00005",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00005-evt-prod-00005",
+        "match_id": "match-gold-42-evt-prod-00005-observed-42-evt-prod-00005",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1496,10 +1720,10 @@
       "target": "event:observed-42:evt-receive-00005",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00005-evt-receive-00005",
+        "match_id": "match-gold-42-evt-receive-00005-observed-42-evt-receive-00005",
         "status": "match",
         "relation_kind": "RECORDED",
-        "score": 0.997517,
+        "score": 0.996689,
         "algorithm_version": "reconciliation-v1"
       }
     },
@@ -1508,7 +1732,7 @@
       "target": "event:observed-42:evt-prod-00006",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00006-evt-prod-00006",
+        "match_id": "match-gold-42-evt-prod-00006-observed-42-evt-prod-00006",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1520,7 +1744,7 @@
       "target": "event:observed-42:evt-receive-00006",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00006-evt-receive-00006",
+        "match_id": "match-gold-42-evt-receive-00006-observed-42-evt-receive-00006",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1532,7 +1756,7 @@
       "target": "event:observed-42:evt-prod-00007",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00007-evt-prod-00007",
+        "match_id": "match-gold-42-evt-prod-00007-observed-42-evt-prod-00007",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1544,7 +1768,7 @@
       "target": "event:observed-42:evt-receive-00007",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00007-evt-receive-00007",
+        "match_id": "match-gold-42-evt-receive-00007-observed-42-evt-receive-00007",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1556,7 +1780,7 @@
       "target": "event:observed-42:evt-prod-00008",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00008-evt-prod-00008",
+        "match_id": "match-gold-42-evt-prod-00008-observed-42-evt-prod-00008",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1568,7 +1792,7 @@
       "target": "event:observed-42:evt-receive-00008",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00008-evt-receive-00008",
+        "match_id": "match-gold-42-evt-receive-00008-observed-42-evt-receive-00008",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1580,7 +1804,7 @@
       "target": "event:observed-42:evt-prod-00009",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00009-evt-prod-00009",
+        "match_id": "match-gold-42-evt-prod-00009-observed-42-evt-prod-00009",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1592,7 +1816,7 @@
       "target": "event:observed-42:evt-receive-00009",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00009-evt-receive-00009",
+        "match_id": "match-gold-42-evt-receive-00009-observed-42-evt-receive-00009",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1604,7 +1828,7 @@
       "target": "event:observed-42:evt-prod-00010",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-prod-00010-evt-prod-00010",
+        "match_id": "match-gold-42-evt-prod-00010-observed-42-evt-prod-00010",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
@@ -1616,12 +1840,30 @@
       "target": "event:observed-42:evt-receive-00010",
       "relation": "reconciles_with",
       "properties": {
-        "match_id": "match-evt-receive-00010-evt-receive-00010",
+        "match_id": "match-gold-42-evt-receive-00010-observed-42-evt-receive-00010",
         "status": "match",
         "relation_kind": "RECORDED",
         "score": 1.0,
         "algorithm_version": "reconciliation-v1"
       }
+    },
+    {
+      "source": "finding:gold-42:finding-quantity_compatibility-lot-00001-lot-00001-evt-receive-00001-evt-receive-00001",
+      "target": "event:gold-42:evt-receive-00001",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:gold-42:finding-quantity_compatibility-lot-00004-lot-00004-evt-receive-00004-evt-receive-00004",
+      "target": "event:gold-42:evt-receive-00004",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:gold-42:finding-quantity_compatibility-lot-00005-lot-00005-evt-receive-00005-evt-receive-00005",
+      "target": "event:gold-42:evt-receive-00005",
+      "relation": "concerns",
+      "properties": {}
     },
     {
       "source": "finding:observed-42:finding-required_evidence-lot-00010-lot-00010-evt-receive-00010",
@@ -1631,6 +1873,30 @@
     },
     {
       "source": "finding:observed-42:finding-required_evidence-lot-00010-lot-00010-evt-receive-00010",
+      "target": "lot:observed-42:lot-00010",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:observed-42:finding-tabular-anomaly-evt-receive-00004",
+      "target": "event:observed-42:evt-receive-00004",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:observed-42:finding-tabular-anomaly-evt-receive-00004",
+      "target": "lot:observed-42:lot-00004",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:observed-42:finding-tabular-anomaly-evt-receive-00010",
+      "target": "event:observed-42:evt-receive-00010",
+      "relation": "concerns",
+      "properties": {}
+    },
+    {
+      "source": "finding:observed-42:finding-tabular-anomaly-evt-receive-00010",
       "target": "lot:observed-42:lot-00010",
       "relation": "concerns",
       "properties": {}

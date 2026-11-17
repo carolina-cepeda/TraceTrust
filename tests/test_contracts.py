@@ -18,6 +18,8 @@ from tracetrust.graph import project_graph, traverse
 from tracetrust.anomaly import anomaly_findings, detect_anomalies
 from tracetrust.evaluation import evaluate
 from tracetrust.ingestion import FileSystemSnapshotReader
+from tracetrust.pipeline import run_pipeline
+from tracetrust.neo4j import export_cypher
 
 
 class ContractTests(unittest.TestCase):
@@ -210,6 +212,32 @@ class ContractTests(unittest.TestCase):
             )
             report_with_false_positive = evaluate(ground_truth, matches, findings + [false_positive])
             self.assertLess(report_with_false_positive.metrics["finding_precision"], 1.0)
+
+    def test_pipeline_runs_all_stages_and_writes_coherent_artifacts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            generate_dataset(directory, lots=4, seed=7)
+            summary = run_pipeline(directory)
+            self.assertEqual(summary["matches"], 8)
+            self.assertEqual(summary["trust_assessments"], 4)
+            self.assertTrue(Path(directory, "pipeline_summary.json").is_file())
+            self.assertTrue(Path(directory, "trace_graph.json").is_file())
+            self.assertTrue(Path(directory, "evaluation.json").is_file())
+            self.assertTrue(Path(directory, "benchmarks.json").is_file())
+            self.assertTrue(Path(directory, "calibration.json").is_file())
+
+    def test_neo4j_export_preserves_all_graph_endpoints(self):
+        with tempfile.TemporaryDirectory() as directory:
+            generate_dataset(directory, lots=2, seed=7)
+            run_pipeline(directory)
+            graph_path = Path(directory, "trace_graph.json")
+            output = Path(directory, "trace_graph.cypher")
+            from tracetrust.models import TraceGraphArtifact
+            artifact = TraceGraphArtifact.model_validate_json(graph_path.read_text(encoding="utf-8"))
+            export_cypher(artifact, output)
+            cypher = output.read_text(encoding="utf-8")
+            self.assertIn("UNWIND $nodes AS node", cypher)
+            self.assertIn("RECONCILES_WITH", cypher)
+            self.assertIn("properties_json", cypher)
 
 
 if __name__ == "__main__":

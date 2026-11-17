@@ -37,7 +37,21 @@ class ApiTests(unittest.TestCase):
             lineage = client.get("/lots/observed-7/lot-00001/lineage?direction=ancestors").json()
             self.assertTrue(any(node["node_type"] == "event" for node in lineage["nodes"]))
             self.assertEqual(client.get("/trust/observed-7/lot-00001").status_code, 200)
+            v1 = client.get("/api/v1/snapshots?limit=1&offset=0")
+            self.assertEqual(v1.status_code, 200)
+            self.assertEqual(v1.json()["total"], 1)
+            self.assertFalse(v1.json()["has_more"])
+            self.assertEqual(client.get("/api/v1/snapshots/observed-7/lots?limit=1").json()["total"], 2)
+            self.assertEqual(client.get("/api/v1/trust/observed-7/lot-00001").status_code, 200)
+            graph_response = client.get("/api/v1/snapshots/observed-7/graph")
+            self.assertEqual(graph_response.status_code, 200)
+            self.assertTrue(graph_response.json()["nodes"])
+            self.assertTrue(graph_response.json()["edges"])
             self.assertIn("items", client.get("/findings/observed-7").json())
+            self.assertIn("X-Request-ID", client.get("/health").headers)
+            self.assertEqual(client.get("/health").headers["X-API-Version"], "v1")
+            self.assertIn("items", client.get("/events/observed-7/evt-receive-00001/evidence").json())
+            self.assertEqual(client.get("/relations/match-gold-7-evt-prod-00001-observed-7-evt-prod-00001").status_code, 200)
             self.assertEqual(client.get("/").status_code, 200)
 
             database = root / "tracetrust.db"
@@ -45,6 +59,10 @@ class ApiTests(unittest.TestCase):
             sqlite_client = TestClient(create_app(database=str(database)))
             self.assertEqual(sqlite_client.get("/snapshots/observed-7").status_code, 200)
             self.assertEqual(sqlite_client.get("/trust/observed-7/lot-00001").status_code, 200)
+
+            protected = TestClient(create_app(str(root), api_key="secret"))
+            self.assertEqual(protected.get("/snapshots").status_code, 401)
+            self.assertEqual(protected.get("/snapshots", headers={"X-API-Key": "secret"}).status_code, 200)
 
 
 if __name__ == "__main__":
