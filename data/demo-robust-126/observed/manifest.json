@@ -1,7 +1,7 @@
 {
   "snapshot_id": "observed-126",
   "source_system": "synthetic_tracop",
-  "extracted_at": "2026-11-17T01:54:22.907862Z",
+  "extracted_at": "2026-11-17T18:16:40.671420Z",
   "schema_version": "1.0.0",
   "source_schema": {
     "database_engine": "synthetic",

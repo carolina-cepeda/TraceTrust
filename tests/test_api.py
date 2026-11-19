@@ -8,6 +8,7 @@ from fastapi.testclient import TestClient
 from tracetrust.api import create_app
 from tracetrust.generator import generate_dataset
 from tracetrust.graph import project_graph
+from tracetrust.models import AnonymizationPolicy, SourceSchema
 from tracetrust.reconciliation import load_events, reconcile
 from tracetrust.rules import run_rules
 from tracetrust.storage import persist_analysis
@@ -15,6 +16,48 @@ from tracetrust.trust_score import calculate_all_lots
 
 
 class ApiTests(unittest.TestCase):
+    def test_trackup_ingestion_persists_analyzes_and_deduplicates(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            generate_dataset(root, lots=1, seed=11)
+            event = load_events(root / "observed" / "events.jsonl")[0]
+            payload = event.model_dump(mode="json")
+            payload["snapshot_id"] = "trackup-11"
+            payload["source_system"] = "trackup"
+            payload["event_id"] = "trackup-event-11"
+            payload["source_record_id"] = "lot:lot-00001"
+
+            request = {
+                "snapshot_id": "trackup-11",
+                "source_system": "trackup",
+                "source_schema": {"database_engine": "postgresql", "migration_ids": ["0010_ordering_schema"]},
+                "anonymization": AnonymizationPolicy(
+                    profile="strict", names_removed=True, phones_removed=True,
+                    actor_ids_pseudonymized=True, precise_locations_removed=True, media_refs_removed=True,
+                ).model_dump(),
+                "outbox_events": [{
+                    "id": "outbox-11", "aggregate": "lot:lot-00001", "type": "TraceabilityEventRecorded",
+                    "payload": {"canonical_event": payload},
+                    "created_at": "2026-11-19T12:00:00Z",
+                }],
+            }
+            client = TestClient(create_app(str(root)))
+            first = client.post("/api/v1/ingest/trackup", json=request)
+            self.assertEqual(first.status_code, 202)
+            self.assertEqual(first.json()["accepted"], 1)
+            duplicate = client.post("/api/v1/ingest/trackup", json=request)
+            self.assertEqual(duplicate.status_code, 202)
+            self.assertEqual(duplicate.json()["duplicates"], 1)
+            self.assertEqual(client.get("/api/v1/snapshots/trackup-11").status_code, 200)
+            self.assertTrue((root / "snapshots" / "trackup-11" / "trace_graph.json").is_file())
+
+            unsupported = {**request, "snapshot_id": "trackup-unsupported", "outbox_events": [{
+                **request["outbox_events"][0], "id": "outbox-unsupported",
+                "type": "LotPublished", "payload": {"lotId": "lot-00001"},
+            }]}
+            rejected = client.post("/api/v1/ingest/trackup", json=unsupported)
+            self.assertEqual(rejected.status_code, 422)
+
     def test_http_api_exposes_snapshot_lineage_findings_and_trust(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -31,6 +74,7 @@ class ApiTests(unittest.TestCase):
 
             client = TestClient(create_app(str(root)))
             self.assertEqual(client.get("/health").status_code, 200)
+            self.assertEqual(client.get("/ready").json()["status"], "ready")
             self.assertEqual(client.get("/snapshots/observed-7").json()["lot_count"], 2)
             self.assertEqual(len(client.get("/snapshots").json()["items"]), 1)
             self.assertEqual(len(client.get("/lots/observed-7").json()["items"]), 2)
@@ -62,6 +106,7 @@ class ApiTests(unittest.TestCase):
 
             protected = TestClient(create_app(str(root), api_key="secret"))
             self.assertEqual(protected.get("/snapshots").status_code, 401)
+            self.assertEqual(protected.get("/ready").status_code, 200)
             self.assertEqual(protected.get("/snapshots", headers={"X-API-Key": "secret"}).status_code, 200)
 
 

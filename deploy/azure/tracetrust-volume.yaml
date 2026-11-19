@@ -1,0 +1,21 @@
+properties:
+  configuration:
+    ingress:
+      external: true
+      targetPort: 8000
+      transport: auto
+  template:
+    containers:
+      - name: tracetrust-api
+        env:
+          - name: TRACETRUST_DATA_ROOT
+            value: /data
+          - name: TRACETRUST_API_KEY
+            secretRef: tracetrust-api-key
+        volumeMounts:
+          - volumeName: tracetrust-data
+            mountPath: /data
+    volumes:
+      - name: tracetrust-data
+        storageType: AzureFile
+        storageName: tracetrustfiles

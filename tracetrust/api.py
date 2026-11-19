@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import uuid
+from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import HTMLResponse
 from starlette.requests import Request
@@ -19,13 +20,13 @@ def create_app(data_root: str | None = None, database: str | None = None, api_ke
     repository = SQLiteAnalysisRepository(database) if database else FilesystemAnalysisRepository(root)
     service = AnalysisService(repository)
     app = FastAPI(title="TraceTrust API", version="0.1.0", description="Auditable traceability analytics")
-    app.include_router(build_v1_router(service))
+    app.include_router(build_v1_router(service, ingestion_root=root))
 
     @app.middleware("http")
     async def request_context(request: Request, call_next):
         request_id = request.headers.get("X-Request-ID", str(uuid.uuid4()))
         configured_key = api_key or os.getenv("TRACETRUST_API_KEY")
-        public_paths = {"/", "/health", "/docs", "/openapi.json", "/redoc"}
+        public_paths = {"/", "/health", "/ready", "/docs", "/openapi.json", "/redoc"}
         if configured_key and request.url.path not in public_paths:
             if request.headers.get("X-API-Key") != configured_key:
                 response = HTTPException(status_code=401, detail="Invalid or missing API key")
@@ -40,6 +41,19 @@ def create_app(data_root: str | None = None, database: str | None = None, api_ke
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/ready")
+    def ready() -> dict[str, str]:
+        data_path = Path(root)
+        try:
+            data_path.mkdir(parents=True, exist_ok=True)
+            probe = data_path / ".readiness-probe"
+            probe.write_text("ok", encoding="utf-8")
+            probe.unlink()
+        except OSError as exc:
+            from starlette.responses import JSONResponse
+            return JSONResponse(status_code=503, content={"status": "not_ready", "detail": str(exc)})
+        return {"status": "ready"}
 
     @app.get("/", response_class=HTMLResponse)
     def home():

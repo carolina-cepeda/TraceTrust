@@ -5,6 +5,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException, Query
 
 from .application import AnalysisService
+from .integration import TrackupBatchRequest, TrackupBatchResult, ingest_trackup_batch
 from .api_models import (
     EvidenceResponse,
     GraphResponse,
@@ -25,8 +26,17 @@ def _page(items: list, limit: int, offset: int) -> dict:
             "total": total, "has_more": offset + limit < total}
 
 
-def build_v1_router(service: AnalysisService) -> APIRouter:
+def build_v1_router(service: AnalysisService, ingestion_root: str | None = None) -> APIRouter:
     router = APIRouter(prefix="/api/v1", tags=["v1"])
+
+    @router.post("/ingest/trackup", response_model=TrackupBatchResult, status_code=202)
+    def ingest_trackup(request: TrackupBatchRequest):
+        if ingestion_root is None:
+            raise HTTPException(status_code=503, detail="Trackup ingestion is not configured")
+        try:
+            return ingest_trackup_batch(ingestion_root, request)
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @router.get("/snapshots", response_model=Page[SnapshotSummaryResponse])
     def snapshots(limit: int = Query(50, ge=1, le=100), offset: int = Query(0, ge=0)):

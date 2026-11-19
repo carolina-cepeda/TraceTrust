@@ -64,9 +64,14 @@ class FilesystemAnalysisRepository:
 
     def _jsonl(self, filename: str) -> list[str]:
         path = self.root / filename
-        if not path.is_file():
-            return []
-        return [line for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        if path.is_file():
+            return [line for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        lines: list[str] = []
+        for snapshot_root in self._snapshot_roots():
+            artifact = snapshot_root / filename
+            if artifact.is_file():
+                lines.extend(line for line in artifact.read_text(encoding="utf-8").splitlines() if line.strip())
+        return lines
 
     def matches(self) -> list[ReconciliationMatch]:
         return [ReconciliationMatch.model_validate_json(line) for line in self._jsonl("reconciliation.jsonl")]
